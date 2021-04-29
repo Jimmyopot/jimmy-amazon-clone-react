@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
+import Checkout from './components/Checkout';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -11,15 +13,14 @@ function App() {
       <Switch>
         <Route path="/checkout">
           <Header />
-          <h1>Checkout Page</h1>
+          <Checkout />
         </Route>
         <Route path="/login">
-          <h1>Login Page</h1>
-          <Link to="/">Back to Homepage</Link>
+          <Login />
         </Route>
         {/* This is Default page */}
         {/* SHOULD ALWAYS BE AT THE BOTTOM */}
-        <Route path="/">
+        <Route exact path="/">
           <Header />
           <Home />
         </Route>
